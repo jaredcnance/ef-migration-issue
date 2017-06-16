@@ -8,9 +8,10 @@ using Example;
 namespace Example.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170616182356_modelC")]
+    partial class modelC
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
@@ -24,16 +25,6 @@ namespace Example.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ModelAs");
-                });
-
-            modelBuilder.Entity("Example.ModelB", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ModelBs");
                 });
 
             modelBuilder.Entity("Example.ModelC", b =>

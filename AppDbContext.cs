@@ -11,5 +11,6 @@ namespace Example
 
         public DbSet<ModelA> ModelAs { get; set; }
         public DbSet<ModelB> ModelBs { get; set; }
+        public DbSet<ModelC> ModelCs { get; set; }
     }
 }
